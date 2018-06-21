@@ -1,7 +1,7 @@
 
 package edu.ulatina.preguntic.servicio;
 
-import edu.ulatina.preguntic.usuario.Usuario;
+import edu.ulatina.preguntic.objetos.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;

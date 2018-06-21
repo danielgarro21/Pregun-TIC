@@ -1,7 +1,7 @@
 
 package edu.ulatina.preguntic.accion;
 
-import edu.ulatina.preguntic.rol.Rol;
+import edu.ulatina.preguntic.objetos.Rol;
 import edu.ulatina.preguntic.servicio.Servicio;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

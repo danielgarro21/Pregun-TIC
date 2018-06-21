@@ -1,12 +1,12 @@
 
 package edu.ulatina.preguntic.tester.fernanda;
 
-import edu.ulatina.preguntic.rol.Rol;
+import edu.ulatina.preguntic.objetos.Rol;
 import java.util.ArrayList;
 import java.util.List;
 import edu.ulatina.preguntic.accion.ServicioRol;
 import edu.ulatina.preguntic.accion.ServicioUsuario;
-import edu.ulatina.preguntic.usuario.Usuario;
+import edu.ulatina.preguntic.objetos.Usuario;
 
 
 public class testerUsuario {

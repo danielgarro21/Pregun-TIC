@@ -1,7 +1,6 @@
 
-package edu.ulatina.preguntic.usuario;
+package edu.ulatina.preguntic.objetos;
 
-import edu.ulatina.preguntic.rol.Rol;
 import java.sql.Date;
 
 

@@ -1,8 +1,8 @@
 package edu.ulatina.preguntic.accion;
 
-import edu.ulatina.preguntic.rol.Rol;
+import edu.ulatina.preguntic.objetos.Rol;
 import edu.ulatina.preguntic.servicio.Servicio;
-import edu.ulatina.preguntic.usuario.Usuario;
+import edu.ulatina.preguntic.objetos.Usuario;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -72,6 +72,52 @@ public class ServicioUsuario extends Servicio {
             }
         }
 
+    }
+    
+    public void modificarUsuario(Usuario uActualizado,int carnetModificar){
+        try {
+            this.conectar();
+            //STEP 3: Execute a query
+            stmt = conn.createStatement();
+            String sql;
+            sql = "UPDATE tbl_usuario SET carnet=(?), cedula=(?), nombre=(?), apellido=(?), contrasena=(?), correo=(?), telefono=(?), sede=(?), codigoCarrera=(?), fechaCreacion=(?), rolUsuario=(?), puntuacion=(?), estado=(?) WHERE carnet=(?)";
+            paInsertar = conn.prepareStatement(sql);
+            paInsertar.setInt(1, uActualizado.getCarnet());
+            paInsertar.setInt(2, uActualizado.getCedula());
+            paInsertar.setString(3, uActualizado.getNombre());
+            paInsertar.setString(4, uActualizado.getApellido());
+            paInsertar.setString(5, uActualizado.getContrasena());
+            paInsertar.setString(6, uActualizado.getCorreo());
+            paInsertar.setString(7, uActualizado.getTelefono());
+            paInsertar.setString(8, uActualizado.getSede());
+            paInsertar.setInt(9, uActualizado.getCodigoCarrera());
+            paInsertar.setDate(10, uActualizado.getFechaCreacion());
+            paInsertar.setInt(11, uActualizado.getRolUsuario().getId());
+            paInsertar.setInt(12, uActualizado.getPuntuacion());
+            paInsertar.setBoolean(13, uActualizado.isEstado());
+            paInsertar.setInt(13, carnetModificar);
+            paInsertar.executeUpdate();
+
+        } catch (Exception ex) {
+            System.out.println("No se pudo crear el usuario...");
+        } finally {
+            try {
+                if (!paInsertar.isClosed()) {
+                    paInsertar.close();
+                }
+
+                if (!stmt.isClosed()) {
+                    stmt.close();
+                }
+
+                if (!conn.isClosed()) {
+                    conn.close();
+                }
+
+            } catch (Exception e) {
+                System.out.println("\nNo pude cerrar...");
+            }
+        }
     }
 
     public void agregarUsuario(Usuario u) {

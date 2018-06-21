@@ -1,5 +1,5 @@
 
-package edu.ulatina.preguntic.rol;
+package edu.ulatina.preguntic.objetos;
 
 
 public class Rol {
