@@ -35,7 +35,7 @@ public class ServicioUsuario extends Servicio {
 
     public void eliminarUsuario() {
         Scanner sc = new Scanner(System.in);
-        int carnetUsuario = 0;
+        int carnetUsuario;
         System.out.println("\n======================================Eliminar======================================\n");
         System.out.println("Ingrese el carnet del usuario a eliminar.\n");
         carnetUsuario = sc.nextInt();
@@ -95,11 +95,11 @@ public class ServicioUsuario extends Servicio {
             paInsertar.setInt(11, uActualizado.getRolUsuario().getId());
             paInsertar.setInt(12, uActualizado.getPuntuacion());
             paInsertar.setBoolean(13, uActualizado.isEstado());
-            paInsertar.setInt(13, carnetModificar);
+            paInsertar.setInt(14, uActualizado.getCarnet());
             paInsertar.executeUpdate();
 
         } catch (Exception ex) {
-            System.out.println("No se pudo crear el usuario...");
+            System.out.println("\nNo se pudo Modificar el usuario...");
         } finally {
             try {
                 if (!paInsertar.isClosed()) {
