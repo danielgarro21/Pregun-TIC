@@ -34,6 +34,9 @@ public class LoginController implements Serializable {
         return "NO";
         }
     }
+    public String mandarRegistro(){
+        return "REGISTRO";
+    }
     
     public void salir(){
         try{
