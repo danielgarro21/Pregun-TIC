@@ -35,5 +35,16 @@
             <from-outcome>SI</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>ACUERDOSYLICENCIAS</from-outcome>
+            <to-view-id>/AcuerdosYLicencias.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/AcuerdosYLicencias.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>REGRESAR</from-outcome>
+            <to-view-id>/Registro.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>

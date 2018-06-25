@@ -17,7 +17,8 @@
             <p>Ingrese su telefono: <h:inputText id="telefonoUsuario" value="#{registroController.telefono}"/></p>
             <p>Ingrese su sede: <h:inputText id="sedeUsuario" value="#{registroController.sede}"/></p>
             <p>Ingrese su codigo de carrera: <h:inputText id="codigoCarreraUsuario" value="#{registroController.codigoCarrera}"/></p>
-            <p><h:commandButton id="VerAcuerdosYLicencias" value="Acuerdos y licencias" action="#{registroController.acuerdosYLicencias()}"/></p>
+            <p>Al presionar registrarme se esta comprometiendo a aceptar los acuerdos y licencias, presione acuerdos y licencias para visualizarlos.</p>
+            <p><h:commandButton id="VerAcuerdosYLicencias" value="Acuerdos y licencias" action="#{registroController.acuerdosYLicencias()}"/><h:commandButton id="cancelarRegistro" value="Cancelar" action="#{registroController.regresarLogin()}"/></p>
             <p><h:commandButton id="ingresarSistema" value="Registrarme" action="#{registroController.registro}"/></p>
         </h:form>
     </h:body>
