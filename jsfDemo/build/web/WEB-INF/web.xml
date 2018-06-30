@@ -9,9 +9,17 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>Desbloquear</servlet-name>
+        <servlet-class>edu.ulatina.preguntic.servlet.Desbloquear</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Desbloquear</servlet-name>
+        <url-pattern>/Desbloquear</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
