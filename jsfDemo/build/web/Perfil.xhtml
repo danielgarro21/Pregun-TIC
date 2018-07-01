@@ -34,6 +34,10 @@
         <p>#{perfilController.usuarioLogeado.puntuacion}</p>
         <p>Estado de la cuenta:</p>
         <p>#{perfilController.usuarioLogeado.estado}</p>
+        <h:form id="BotonesRedireccionar">
+        <h:commandButton id="modificarUsuario" value="Modificar datos" action="#{loginController.salir()}"/>
+        <h:commandButton id="regresarAlMenu" value="Regresar a la pagina principal" action="#{perfilController.regresarAlMenu()}"/>
+        </h:form>
     </h:body>
 </html>
 

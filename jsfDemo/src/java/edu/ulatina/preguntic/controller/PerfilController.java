@@ -26,6 +26,10 @@ public class PerfilController implements Serializable{
        String mostrarPerfil="VERPERFIL";
        return mostrarPerfil;
    }
+   public String regresarAlMenu(){
+        String regresar="REGRESARMENUPERFIL"; 
+        return regresar;
+   }
 
     public Usuario getUsuarioLogeado() {
         return usuarioLogeado;

@@ -47,4 +47,11 @@
             <to-view-id>/Registro.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Perfil.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>REGRESARMENUPERFIL</from-outcome>
+            <to-view-id>/Bienvenida.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
