@@ -5,6 +5,7 @@
  */
 package edu.ulatina.preguntic.controller;
 
+import com.mysql.cj.x.protobuf.Mysqlx;
 import edu.ulatina.preguntic.model.Usuario;
 import edu.ulatina.preguntic.service.ServicioUsuario;
 import java.io.Serializable;
@@ -54,6 +55,15 @@ public class LoginController implements Serializable {
         }catch(Exception e){
             e.printStackTrace();
         }
+    }
+    public Usuario recuperarUsuario(){
+        Usuario usuarioLogeado=null;
+        for (Usuario u : listaUsuarios) {
+            if(this.carnet==u.getCarnet()){
+                usuarioLogeado=u;
+            }
+        }
+        return usuarioLogeado;
     }
 
     public int getCarnet() {

@@ -1,4 +1,3 @@
-
 package edu.ulatina.preguntic.service;
 
 import edu.ulatina.preguntic.model.Rol;
@@ -11,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+public class ServicioUsuario extends Servicio {
 
-public class ServicioUsuario extends Servicio{
     @Override
     public void conectar() {
         try {
@@ -45,7 +44,7 @@ public class ServicioUsuario extends Servicio{
             paInsertar = conn.prepareStatement(sql);
             paInsertar.setInt(1, carnetUsuario);
             paInsertar.executeUpdate();
-            
+
         } catch (Exception ex) {
             System.out.println("No se pudo borrar el usuario...");
         } finally {
@@ -68,20 +67,21 @@ public class ServicioUsuario extends Servicio{
         }
 
     }
-    public Usuario LoginUsuario(int carnet,String contrasena){
-        List<Usuario> lstUsuarios=this.listarUsuarios();
-        Usuario usuarioLogearse=null;
+
+    public Usuario LoginUsuario(int carnet, String contrasena) {
+        List<Usuario> lstUsuarios = this.listarUsuarios();
+        Usuario usuarioLogearse = null;
         for (Usuario u : lstUsuarios) {
-            if(u.getCarnet()==carnet&&u.getContrasena().equals(contrasena)){
-                usuarioLogearse=u;
+            if (u.getCarnet() == carnet && u.getContrasena().equals(contrasena)) {
+                usuarioLogearse = u;
             }
         }
-        
+
         return usuarioLogearse;
-        
+
     }
-    
-    public void modificarUsuario(Usuario uActualizado,int carnetModificar){
+
+    public void modificarUsuario(Usuario uActualizado, int carnetModificar) {
         try {
             this.conectar();
             //STEP 3: Execute a query
@@ -188,7 +188,7 @@ public class ServicioUsuario extends Servicio{
 
             //STEP 3.1: Extract data from result set
             while (rs.next()) {
-                Rol rolUsuario=null;
+                Rol rolUsuario = null;
                 //Retrieve by column name
                 int carnet = rs.getInt("carnet");
                 int cedula = rs.getInt("cedula");
@@ -202,11 +202,11 @@ public class ServicioUsuario extends Servicio{
                 Date fechaCreacion = rs.getDate("fechaCreacion");
                 for (int i = 0; i < lstRoles.size(); i++) {
                     if (rs.getInt("rolUsuario") == lstRoles.get(i).getId()) {
-                         rolUsuario = lstRoles.get(i);
+                        rolUsuario = lstRoles.get(i);
                     }
                 }
-                int puntuacion=rs.getInt("puntuacion");
-                boolean estado= rs.getBoolean("estado");
+                int puntuacion = rs.getInt("puntuacion");
+                boolean estado = rs.getBoolean("estado");
                 Usuario u = new Usuario(carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrrera, fechaCreacion, rolUsuario, puntuacion, estado);
                 lstUsuarios.add(u);
             }
