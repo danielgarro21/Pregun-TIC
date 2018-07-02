@@ -21,6 +21,10 @@ import javax.servlet.http.HttpServletRequest;
 public class PerfilController implements Serializable{
    private Usuario usuarioLogeado;
    
+   public String modificarPerfil(){
+       String mostrarPerfil="MODIFICARPERFIL";
+       return mostrarPerfil;
+   }
    
    public String mostrarPerfil(){
        String mostrarPerfil="VERPERFIL";
@@ -30,9 +34,18 @@ public class PerfilController implements Serializable{
         String regresar="REGRESARMENUPERFIL"; 
         return regresar;
    }
+   public String regresarAlPerfil(){
+        String regresar="REGRESARPERFIL"; 
+        return regresar;
+   }
 
     public Usuario getUsuarioLogeado() {
         return usuarioLogeado;
+    }
+    
+    public void modificarPerfilDeseado(){
+        ServicioUsuario sUsuarioModificar= new ServicioUsuario();
+        sUsuarioModificar.modificarUsuario(this.usuarioLogeado);
     }
 
     public void setUsuarioLogeado(Usuario usuarioLogeado) {

@@ -81,7 +81,7 @@ public class ServicioUsuario extends Servicio {
 
     }
 
-    public void modificarUsuario(Usuario uActualizado, int carnetModificar) {
+    public void modificarUsuario(Usuario uActualizado) {
         try {
             this.conectar();
             //STEP 3: Execute a query

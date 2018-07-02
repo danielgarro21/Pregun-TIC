@@ -53,5 +53,16 @@
             <from-outcome>REGRESARMENUPERFIL</from-outcome>
             <to-view-id>/Bienvenida.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>MODIFICARPERFIL</from-outcome>
+            <to-view-id>/ModificarPerfil.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/ModificarPerfil.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>REGRESARPERFIL</from-outcome>
+            <to-view-id>/Perfil.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
 </faces-config>
