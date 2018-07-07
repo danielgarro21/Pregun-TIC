@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="EnvioContraseña.xhtml" x="350" y="44" zoom="true"/>
+        <Node id="index.xhtml" x="382" y="396" zoom="true"/>
+        <Node id="CorreoDesbloqueo.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="Error.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="AcuerdosYLicencias.xhtml" x="572" y="830" zoom="true"/>
+        <Node id="OlvidarContrasena.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="Bienvenida.xhtml" x="702" y="167" zoom="true"/>
+        <Node id="CorreoInvalido.xhtml" x="639" y="42" zoom="true"/>
+        <Node id="Registro.xhtml" x="655" y="610" zoom="true"/>
+        <Node id="Perfil.xhtml" x="1040" y="107" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

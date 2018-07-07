@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>PregunTIC</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form id="formRegistro">
+            <p>Ingrese su carnet: <h:inputText id="carnetUsuario" value="#{registroController.carnet}"/></p>
+            <p>Ingrese su cedula: <h:inputText id="cedulaUsuario" value="#{registroController.cedula}"/></p>
+            <p>Ingrese su nombre: <h:inputText id="nombreUsuario" value="#{registroController.nombre}"/></p>
+            <p>Ingrese su apellido: <h:inputText id="apellidoUsuario" value="#{registroController.apellido}"/></p>
+            <p>Ingrese su contrasena: <h:inputSecret id="contrasenaUsuario" value="#{registroController.contrasena}"/></p>
+            <p>Ingrese su correo: <h:inputText id="correoUsuario" value="#{registroController.correo}"/></p>
+            <p>Ingrese su telefono: <h:inputText id="telefonoUsuario" value="#{registroController.telefono}"/></p>
+            <p>Ingrese su sede: <h:inputText id="sedeUsuario" value="#{registroController.sede}"/></p>
+            <p>Ingrese su codigo de carrera: <h:inputText id="codigoCarreraUsuario" value="#{registroController.codigoCarrera}"/></p>
+            <p>Al presionar registrarme se esta comprometiendo a aceptar los acuerdos y licencias, presione acuerdos y licencias para visualizarlos.</p>
+            <p><h:commandButton id="VerAcuerdosYLicencias" value="Acuerdos y licencias" action="#{registroController.acuerdosYLicencias()}"/><h:commandButton id="cancelarRegistro" value="Cancelar" action="#{registroController.regresarLogin()}"/></p>
+            <p><h:commandButton id="ingresarSistema" value="Registrarme" action="#{registroController.registro}"/></p>
+        </h:form>
+    </h:body>
+</html>
+
