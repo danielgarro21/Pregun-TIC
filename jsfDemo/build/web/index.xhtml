@@ -12,8 +12,16 @@
         <h:form id="formIndex">
             <p>Ingrese su carnet: <h:inputText id="usuarioCarnet" value="#{loginController.carnet}"/></p>
             <p>Ingrese su contrasena: <h:inputSecret id="contrasena" value="#{loginController.contrasena}"/></p>
+            
             <p><h:commandButton id="ingreso" value="Ingresar al Sistema" action="#{loginController.ingresar}"/>  <h:commandButton id="registro" value="Registrarme" action="#{loginController.mandarRegistro}"/></p>
-        </h:form>
+            </h:form>
+        
+            <h:form>
+            <p><h:commandButton id="olvidarID" value="Olvido su contraseña?" action="#{enviarCorreoController.recuperarContrasena()}"/></p>
+             <p><h:commandButton id="desbloqueoID" value="Desbloquear cuenta" action="#{enviarCorreoController.desbloqueoCuenta()}"/></p>
+             
+            </h:form>
+        
     </h:body>
 </html>
 

@@ -25,15 +25,18 @@ public class LoginController implements Serializable {
     private List<Usuario> listaUsuarios;
     
     public String ingresar(){
+       String aux="NO";
         ServicioUsuario sLogin= new ServicioUsuario();
         
         Usuario usuarioLogearse=sLogin.LoginUsuario(carnet, contrasena);
         this.listaUsuarios=sLogin.listarUsuarios();
         if(usuarioLogearse!=null){
-            return "SI";
-        }else{
-        return "NO";
-        }
+            aux = "SI";
+            }
+        if((usuarioLogearse!=null)&&(sLogin.verificarFechaContrasena(carnet)<60)){
+             aux="CADUCOCONTRASENA" ;  
+            }
+        return aux;
     }
     public String mandarRegistro(){
         return "REGISTRO";

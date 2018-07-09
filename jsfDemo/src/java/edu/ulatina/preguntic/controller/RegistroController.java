@@ -36,6 +36,7 @@ public class RegistroController implements Serializable{
     private Rol rolUsuario;
     private int puntuacion;
     private boolean estado;
+    private Date fechaCaducacion;
     
     public String registro(){
         ServicioUsuario sRegistro= new ServicioUsuario();
@@ -45,7 +46,8 @@ public class RegistroController implements Serializable{
         this.rolUsuario=sRolRegistro.listarRoles().get(0);
         this.puntuacion=0;
         this.estado=false;
-        Usuario registarUsuario=new Usuario(carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrera, fechaCreacion, rolUsuario, puntuacion, estado);
+        this.fechaCaducacion=Date.valueOf(LocalDate.now());
+        Usuario registarUsuario=new Usuario(carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrera, fechaCreacion, rolUsuario, puntuacion, estado, fechaCaducacion);
         sRegistro.agregarUsuario(registarUsuario);
         
         for (Usuario u : sRegistro.listarUsuarios()) {

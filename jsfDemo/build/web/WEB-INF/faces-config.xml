@@ -17,6 +17,18 @@
             <from-outcome>REGISTRO</from-outcome>
             <to-view-id>/Registro.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>CADUCOCONTRASENA</from-outcome>
+            <to-view-id>/CaducacionContrasena.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>OLVIDAR</from-outcome>
+            <to-view-id>/CambioContraseña.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>DESBLOQUEO</from-outcome>
+            <to-view-id>/CambioContraseña.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/Bienvenida.xhtml</from-view-id>

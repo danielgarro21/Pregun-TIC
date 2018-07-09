@@ -183,7 +183,7 @@ public class ServicioUsuario extends Servicio {
             //STEP 3: Execute a query
             stmt = conn.createStatement();
             String sql;
-            sql = "SELECT carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrera, fechaCreacion, rolUsuario, puntuacion, estado  FROM tbl_usuario";
+            sql = "SELECT carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrera, fechaCreacion, rolUsuario, puntuacion, estado, fechaCambioContrasena  FROM tbl_usuario";
             rs = stmt.executeQuery(sql);
 
             //STEP 3.1: Extract data from result set
@@ -207,7 +207,8 @@ public class ServicioUsuario extends Servicio {
                 }
                 int puntuacion = rs.getInt("puntuacion");
                 boolean estado = rs.getBoolean("estado");
-                Usuario u = new Usuario(carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrrera, fechaCreacion, rolUsuario, puntuacion, estado);
+                Date fechaCaducacion = rs.getDate("fechaCambioContrasena");
+                Usuario u = new Usuario(carnet, cedula, nombre, apellido, contrasena, correo, telefono, sede, codigoCarrrera, fechaCreacion, rolUsuario, puntuacion, estado, fechaCaducacion);
                 lstUsuarios.add(u);
             }
         } catch (Exception ex) {
@@ -229,5 +230,37 @@ public class ServicioUsuario extends Servicio {
             }
         }
         return lstUsuarios;
+    }
+    
+     public int verificarFechaContrasena(Integer carnet){
+        ResultSet rs = null;
+        
+        try{
+            this.conectar();
+            stmt = conn.createStatement();
+            String sql;
+            sql = "SELECT datediff(current_date(), (SELECT fechaCambioContrasena FROM tbl_usuario WHERE carnet = " + carnet + "))";
+            rs = stmt.executeQuery(sql);
+            
+            int dias = rs.getInt("fechaCambioContrasena");
+            return dias;
+        }catch(SQLException ex){
+            System.out.println("No se puede consultar la fecha");
+        }finally{
+            try{
+                if(!rs.isClosed()){
+                    rs.close();
+                }
+                if(!stmt.isClosed()){
+                    stmt.close();
+                }
+                if(!conn.isClosed()){
+                    conn.close();
+                }
+            } catch(Exception e){
+                System.out.println("No se pudo cerrar, verificacion de fecha, Servicio Usuario");
+            }
+        }
+        return 0;
     }
 }

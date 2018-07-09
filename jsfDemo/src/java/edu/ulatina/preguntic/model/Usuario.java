@@ -25,8 +25,9 @@ public class Usuario {
   private Rol rolUsuario;
   private int puntuacion;
   private boolean estado;
+  private Date fechaCaducacion;
 
-    public Usuario(int carnet, int cedula, String nombre, String apellido, String contrasena, String correo, String telefono, String sede, int codigoCarrera, Date fechaCreacion, Rol rolUsuario, int puntuacion, boolean estado) {
+    public Usuario(int carnet, int cedula, String nombre, String apellido, String contrasena, String correo, String telefono, String sede, int codigoCarrera, Date fechaCreacion, Rol rolUsuario, int puntuacion, boolean estado, Date fechaCaducacion) {
         this.carnet = carnet;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -40,6 +41,7 @@ public class Usuario {
         this.rolUsuario = rolUsuario;
         this.puntuacion = puntuacion;
         this.estado = estado;
+        this.fechaCaducacion = fechaCaducacion;
     }
 
     public int getCarnet() {
@@ -145,6 +147,15 @@ public class Usuario {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public Date getFechaCaducacion() {
+        return fechaCaducacion;
+    }
+
+    public void setFechaCaducacion(Date fechaCaducacion) {
+        this.fechaCaducacion = fechaCaducacion;
+    }
+    
 
     @Override
     public String toString() {
